@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: rgba(255, 255, 255, 0); /* transparan */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px); /* efek blur */
+  -webkit-backdrop-filter: blur(12px); /* untuk Safari */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: block;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-menu li a:hover {
+  background: #fff;
+  color: rgba(61,0,87,1);
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-hamburger,
+.navbar-hamburger::before,
+.navbar-hamburger::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.navbar-hamburger::before,
+.navbar-hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.navbar-hamburger::before {
+  top: -8px;
+}
+
+.navbar-hamburger::after {
+  top: 8px;
+}
+
+/* Home section background image */
+#home {
+  background: url("../asset/bg.jpg") center/cover no-repeat;
+  min-height: 60vh;
+  padding: 80px 0 40px 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* Optional: overlay gelap biar teks tetap terbaca */
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20,30,40,0.45);
+  z-index: 0;
+}
+
+/* Pastikan konten home di atas overlay */
+#home > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Home Section */
+.home-section {
+  padding: 80px 0 40px 0;
+  min-height: 60vh;
+  text-align: center;
+  background: url("../asset/bg.jpg") center/cover no-repeat;
+  color: #fff;
+  position: relative;
+}
+.home-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20,30,40,0.45);
+  z-index: 0;
+}
+.home-section > * {
+  position: relative;
+  z-index: 1;
+}
+.home-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+.home-section p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.home-img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Our Profile Section */
+.profile-section {
+  padding: 80px 0 40px 0;
+  min-height: 50vh;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(to right, #111 0%, #111 35%, transparent 55%, transparent 100%), 
+              url("../asset/op.jpg") right center/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+
+.profile-section h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.profile-section p {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-bottom: 32px;
+}
+
+.profile-locations {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-location {
+  text-align: center;
+  background: rgba(20,20,20,0.7);
+  padding: 18px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(61,0,87,0.08);
+}
+
+.profile-location img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(61,0,87,0.18);
+  border: 2px solid #ffffff;
+}
+
+.profile-location div {
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 80px 0 40px 0;
+  min-height: 50vh;
+  text-align: center;
+  background: #111; /* hitam polos */
+}
+.portfolio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.carousel-track {
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-img {
+  min-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(61,0,87,0.12);
+  transition: opacity 0.3s;
+  display: none;
+}
+.carousel-img.active {
+  display: block;
+  opacity: 1;
+}
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.carousel-btn:hover {
+  background: rgba(61,0,87,1);
+}
+
+/* Message Section */
+.message-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.message-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.message-form {
+  flex: 1;
+  min-width: 320px;
+}
+
+.message-form h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.form-row label {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+.form-row input[type="text"],
+.form-row input[type="date"],
+.form-row textarea {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 2px solid #aaa;
+  background: #eee;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: background 0.2s;
+}
+.submit-btn:hover {
+  background: #3d0057;
+  color: #fff;
+  border-color: #3d0057;
+}
+
+.message-result {
+  flex: 1;
+  min-width: 320px;
+  border: 2px solid #222;
+  padding: 24px;
+  font-size: 1.1rem;
+  background: #fff;
+  height: 320px;
+  box-sizing: border-box;
+}
+
+.message-result b {
+  color: #3d0057;
+}
+
+/* Modal Popup Styles */
+.message-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 40px;
+  overflow-y: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.message-modal h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.message-modal p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.message-modal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.message-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message-modal input[type="text"],
+.message-modal input[type="date"],
+.message-modal textarea {
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.message-modal textarea {
+  resize: vertical;
+}
+
+.message-modal .submit-btn {
+  background: #3d0057;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+.message-modal .submit-btn:hover {
+  background: #5e007f;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .navbar-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #000000;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    border-bottom: 1px solid #eee;
+    /* animasi slide down */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s;
+    text-align: center; /* rata tengah */
+  }
+  .navbar-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .navbar-menu li a {
+    padding: 16px 20px;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+    text-align: center; /* rata tengah */
+    width: 100%;
+    display: block;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+/* Responsive: background image stays right, gradient stays left */
+@media (max-width: 900px) {
+  .profile-section {
+    background: linear-gradient(to bottom, #111 0%, #111 35%, transparent 55%, transparent 100%), 
+                url("../asset/op.jpg") bottom right/cover no-repeat;
+  }
+  .profile-locations {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* Responsive layout untuk semua section */
+@media (max-width: 700px) {
+  .home-section,
+  .profile-section,
+  .portfolio-section,
+  .message-section {
+    padding: 32px 8px 24px 8px;
+    min-height: unset;
+    text-align: center;
+  }
+
+  .home-img,
+  .profile-location img {
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .profile-locations {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .carousel {
+    max-width: 98vw;
+  }
+  .carousel-track {
+    width: 98vw;
+    height: 140px;
+  }
+  .carousel-img {
+    height: 140px;
+    border-radius: 10px;
+  }
+
+  .message-container {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .message-form,
+  .message-result {
+    min-width: unset;
+    width: 100%;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .submit-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .message-modal {
+    padding: 16px;
+  }
+  .modal-content {
+    width: 100%;
+    max-width: 98vw;
+    box-sizing: border-box;
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .carousel-track {
+    width: 90vw;
+    height: 140px;
+  }
+  .carousel-img {
+    height: 140px;
+    border-radius: 10px;
+  }
+}

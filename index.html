@@ -12,10 +12,108 @@
 
 <body>
     <!-- header content -->
-    <header></header>
+    <header>
+  <nav class="navbar">
+    <div class="navbar-brand"><img src="asset/12.jpg" alt=""></div>
+    <button class="navbar-toggle" aria-label="Toggle navigation">
+      <span class="navbar-hamburger"></span>
+    </button>
+    <ul class="navbar-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#our-profile">Our Profile</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#message-us">Message Us</a></li>
+    </ul>
+  </nav>
+</header>
 
     <!-- main content -->
-    <main></main>
+    <main>
+  <section id="home" class="home-section">
+    <h1>Selamat Datang di Website Jikon</h1>
+    <p>
+      CodingCamp RevoU 2025
+    </p>
+    <img src="asset/rj.png" alt="Welcome" class="home-img">
+  </section>
+
+  <!-- Our Profile Section -->
+  <section id="our-profile" class="profile-section">
+    <h2>Our Profile</h2>
+    <p>
+      Berikut beberapa cabang kita.<br>
+      Kami berlokasi di Jakarta, Bandung, dan Surabaya.<br>
+    </p>
+    <div class="profile-locations">
+      <div class="profile-location">
+        <img src="asset/jakarta.jpg" alt="Jakarta">
+        <div>Jakarta</div>
+      </div>
+      <div class="profile-location">
+        <img src="asset/bandung.jpg" alt="Bandung">
+        <div>Bandung</div>
+      </div>
+      <div class="profile-location">
+        <img src="asset/surabaya.jpg" alt="Surabaya">
+        <div>Surabaya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>Portfolio</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Sebelumnya">&#10094;</button>
+      <div class="carousel-track">
+        <img src="asset/p1.png" alt="Portfolio 1" class="carousel-img">
+        <img src="asset/p2.jpg" alt="Portfolio 2" class="carousel-img">
+        <img src="asset/p3.jpg" alt="Portfolio 3" class="carousel-img">
+        <img src="asset/p4.jpg" alt="Portfolio 4" class="carousel-img">
+      </div>
+      <button class="carousel-btn next" aria-label="Selanjutnya">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Message Us Section -->
+  <section id="message-us" class="message-section">
+  <div class="message-container">
+    <form id="message-form" class="message-form">
+      <h2>Message Us</h2>
+      <div class="form-row">
+        <label for="nama">Nama :</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama" required>
+      </div>
+      <div class="form-row">
+        <label for="tgl">Tanggal Lahir :</label>
+        <input type="date" id="tgl" name="tgl" required>
+      </div>
+      <div class="form-row">
+        <label>Jenis Kelamin :</label>
+        <input type="radio" id="laki" name="jk" value="Laki-Laki" checked>
+        <label for="laki">Laki-Laki</label>
+        <input type="radio" id="perempuan" name="jk" value="Perempuan">
+        <label for="perempuan">Perempuan</label>
+      </div>
+      <div class="form-row">
+        <label for="pesan">Pesan :</label>
+        <textarea id="pesan" name="pesan" placeholder="Pesan" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- Modal Popup -->
+<div id="message-modal" class="message-modal">
+  <div class="modal-content">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <h3>Data Terkirim</h3>
+    <div id="modal-data"></div>
+  </div>
+</div>
+  <!-- ...section lain... -->
+</main>
     
     <!-- footer content -->
     <footer></footer>
